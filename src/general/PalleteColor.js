@@ -1,5 +1,3 @@
-
-
 export const PalleteColor = {
     Red : '#E96373',
     Orange: '#F1AA44',
