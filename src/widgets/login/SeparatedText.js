@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { PalleteColor } from '../general/PalleteColor';
-
+import { PalleteColor } from '../../general/PalleteColor'
 export const SeparatedText = ({param}) => {
     return (
     <View style={styles.mainView}>

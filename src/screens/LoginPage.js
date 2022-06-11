@@ -11,8 +11,8 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient';
 import { PalleteColor } from '../general/PalleteColor';
-import { SeparatedText } from './widgets/login/SeparatedText';
-import { IconsRaw } from './widgets/login/IconsRaw';
+import { SeparatedText } from '../widgets/login/SeparatedText';
+import { IconsRaw } from '../widgets/login/IconsRaw';
 
 const LoginPage = () => {
     return (
@@ -24,7 +24,7 @@ const LoginPage = () => {
             end={{ x: 1, y: 1 }}
             style={styles.headerGradient}  
           >
-            <Text style={styles.logeText}>Eco Textile</Text>
+            <Text style={styles.logoText}>Eco Textile</Text>
             <View style={styles.headerView}>
               <View style={styles.whiteLineView} >
               </View>
@@ -64,7 +64,7 @@ const LoginPage = () => {
 
 const styles = StyleSheet.create({
     // Texts
-    logeText: {
+    logoText: {
       color: '#FFF',
       fontWeight: 'bold',
       marginTop: '16%',
