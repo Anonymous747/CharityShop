@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const SignUpPage = () => {
+const SignUpPage = (props) => {
     return (
-        <Text>fasf</Text>
-        // <View>
-        //     <Text>sfsafsaf</Text>
-        // </View>
+        // <Text>fasf</Text>
+        <View>
+            <Text>sfsafsaf</Text>
+        </View>
     );
 }
+
+export default SignUpPage;

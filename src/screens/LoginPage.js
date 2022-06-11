@@ -14,7 +14,7 @@ import { PalleteColor } from '../general/PalleteColor';
 import { SeparatedText } from '../widgets/login/SeparatedText';
 import { IconsRaw } from '../widgets/login/IconsRaw';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
     return (
         <View style={styles.mainView}>
           <StatusBar translucent backgroundColor='transparent' />
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
       height: 20,
       backgroundColor: '#FFF',
       position: 'absolute',
-      bottom: 0, 
+      bottom: -1, 
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20, 
     },
