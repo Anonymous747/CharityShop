@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {PalleteColor} from '../../general/PalleteColor';
 
@@ -11,17 +10,8 @@ export const CustomLinearGradient = ({children}) => {
       useAngle={true}
       start={{x: 0, y: 0}}
       end={{x: 1, y: 1}}
-      style={styles.headerGradient}>
+      flex={1}>
       {children}
     </LinearGradient>
   );
 };
-
-const styles = StyleSheet.create({
-  headerGradient: {
-    // alignItems: 'center',
-    // justifyContent: 'center',
-    // height: '100%',
-    flex: 1,
-  },
-});

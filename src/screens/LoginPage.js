@@ -9,13 +9,16 @@ import {
   TextInput,
 } from 'react-native';
 
-import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 import {PalleteColor} from '../general/PalleteColor';
 import {SeparatedText} from '../widgets/login/SeparatedText';
 import {IconsRaw} from '../widgets/login/IconsRaw';
 import {GradientButton} from '../widgets/common/GradientButton';
+import LinearGradient from 'react-native-linear-gradient';
 
-const LoginPage = props => {
+const LoginPage = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.mainView}>
       <StatusBar translucent backgroundColor="transparent" />
@@ -45,7 +48,7 @@ const LoginPage = props => {
         <IconsRaw icons={[]} />
         <View style={styles.footerView}>
           <Text style={styles.dontHaveAccountText}>Don't have an account?</Text>
-          <TouchableOpacity onPress={() => props.navigation.navigate('SignUp')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
             <Text style={styles.signUpText}>Sign up now!</Text>
           </TouchableOpacity>
         </View>

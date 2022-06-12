@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 50,
     borderRadius: 30,
-    marginTop: 20,
   },
   signInText: {
     color: '#FFF',
