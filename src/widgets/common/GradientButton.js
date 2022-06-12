@@ -7,7 +7,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { PalleteColor } from '../../general/PalleteColor';
 
-export const GradientButton = (colors, buttonText) => {
+export const GradientButton = ({colors, buttonText}) => {
     return (
         <TouchableOpacity>
               <LinearGradient 
