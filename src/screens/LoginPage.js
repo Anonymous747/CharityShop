@@ -13,6 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { PalleteColor } from '../general/PalleteColor';
 import { SeparatedText } from '../widgets/login/SeparatedText';
 import { IconsRaw } from '../widgets/login/IconsRaw';
+import { GradientButton } from '../widgets/common/GradientButton';
 
 const LoginPage = (props) => {
     return (
@@ -39,21 +40,12 @@ const LoginPage = (props) => {
             <TouchableWithoutFeedback >
               <Text style={styles.forgotStyle}>Forgot password?</Text>
             </TouchableWithoutFeedback>
-            <TouchableOpacity>
-              <LinearGradient 
-                colors={[PalleteColor.Red, PalleteColor.Orange]}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 1 }}
-                style={styles.signInBtn} 
-              > 
-                <Text style={styles.signInText}>Sign In</Text>
-              </LinearGradient>
-            </TouchableOpacity>
+            <GradientButton colors={[]} buttonText='Sign In'/>
             <SeparatedText param={'or'}/>
             <IconsRaw icons={[]}/>
             <View style={styles.footerView}>
               <Text style={styles.dontHaveAccountText}>Don't have an account?</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => props.navigation.navigate('SignUp')}>
                 <Text style={styles.signUpText}>Sign up now!</Text>
               </TouchableOpacity>
             </View>
@@ -87,10 +79,6 @@ const styles = StyleSheet.create({
       borderWidth: 2,
       padding: 10,
     },
-    signInText: {
-      color: '#FFF',
-      fontSize: 16,
-    },
     dontHaveAccountText: {
       fontWeight: 'bold',
       marginRight: 4,
@@ -108,13 +96,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
     },
-    signInBtn: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: 50,
-      borderRadius: 30,
-      marginTop: 20,
-    },
+   
     // Gradients
     headerGradient: {
       alignItems: 'center',

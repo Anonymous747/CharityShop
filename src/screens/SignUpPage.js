@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const SignUpPage = (props) => {
     return (
-        // <Text>fasf</Text>
-        <View>
-            <Text>sfsafsaf</Text>
-        </View>
+        <SafeAreaView>
+            <View>
+                <Text>sfsafsaf</Text>
+            </View>
+        </SafeAreaView>
+        
     );
 }
 
