@@ -2,7 +2,7 @@ import * as React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {PalleteColor} from '../../general/PalleteColor';
 
-export const CustomLinearGradient = ({children}) => {
+export const BackgroundLinearGradient = ({children}) => {
   return (
     <LinearGradient
       colors={[PalleteColor.Red, PalleteColor.Orange]}

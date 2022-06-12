@@ -6,7 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {
   BackArrow,
-  CustomLinearGradient,
+  BackgroundLinearGradient,
   GradientButton,
   ModalSheet,
 } from '../widgets/common/Index';
@@ -16,7 +16,7 @@ const SignUpPage = () => {
   const navigation = useNavigation();
 
   return (
-    <CustomLinearGradient>
+    <BackgroundLinearGradient>
       <BackArrow onPress={() => navigation.goBack()} />
       <ModalSheet>
         <ScrollView>
@@ -40,7 +40,7 @@ const SignUpPage = () => {
           <GradientButton colors={[]} buttonText="Sign Up" />
         </View>
       </ModalSheet>
-    </CustomLinearGradient>
+    </BackgroundLinearGradient>
   );
 };
 

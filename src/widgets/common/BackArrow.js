@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {PalleteColor} from '../../general/PalleteColor';
 
 export const BackArrow = ({onPress}) => {
   const insets = useSafeAreaInsets();
@@ -11,7 +12,7 @@ export const BackArrow = ({onPress}) => {
       <Icon
         name="left"
         type="ant-design"
-        color="#FFF"
+        color={PalleteColor.White}
         size={16}
         onPress={onPress}
       />
@@ -22,9 +23,8 @@ export const BackArrow = ({onPress}) => {
 const styles = StyleSheet.create({
   backArrow: {
     justifyContent: 'flex-end',
-    alignContent: 'flex-start',
     alignSelf: 'flex-start',
-    height: '12%',
+    height: 80,
     paddingHorizontal: 20,
     paddingBottom: '4%',
   },

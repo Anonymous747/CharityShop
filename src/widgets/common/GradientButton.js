@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   signInText: {
-    color: '#FFF',
+    color: PalleteColor.White,
     fontSize: 16,
   },
 });
