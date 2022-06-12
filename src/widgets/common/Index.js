@@ -1,6 +1,6 @@
 import {BackArrow} from './BackArrow';
-import {CustomLinearGradient} from './CustomLinearGradient';
+import {BackgroundLinearGradient} from './BackgroundLinearGradient';
 import {GradientButton} from './GradientButton';
 import {ModalSheet} from './ModalSheet';
 
-export {BackArrow, CustomLinearGradient, GradientButton, ModalSheet};
+export {BackArrow, BackgroundLinearGradient, GradientButton, ModalSheet};

@@ -1,5 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
+import {PalleteColor} from '../../general/PalleteColor';
 
 export const ModalSheet = ({children}) => {
   return <View style={styles.bodyView}>{children}</View>;
@@ -7,7 +8,7 @@ export const ModalSheet = ({children}) => {
 
 const styles = StyleSheet.create({
   bodyView: {
-    backgroundColor: 'white',
+    backgroundColor: PalleteColor.White,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     flex: 1,
