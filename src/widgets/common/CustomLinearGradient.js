@@ -1,39 +1,28 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { PalleteColor } from '../../general/PalleteColor';
 
-  export const CustomLinearGradient = () => {
+  export const CustomLinearGradient = ({ children }) => {
     return (
       <LinearGradient 
         colors={[PalleteColor.Red, PalleteColor.Orange]}
+        angle={ 90.0 }
+        useAngle= { true }
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.headerGradient}  
       >
-        <Text style={styles.logeText}>Eco Textile</Text>
-        <View style={styles.headerView}>
-          <View style={styles.whiteLineView} >
-          </View>
-        </View>
+        { children }
     </LinearGradient>
     );
   }
 
   const styles = StyleSheet.create({
     headerGradient: {
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '30%',
-    },
-    logoText: {
-
-    },
-    headerView: {
-
-    },
-    whiteLineView: {
-
+      // alignItems: 'center',
+      // justifyContent: 'center',
+      // height: '100%',
+      flex: 1,
     },
   });
-
-  export default LinearGradient;

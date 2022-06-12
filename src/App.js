@@ -12,21 +12,19 @@ const Stack = createStackNavigator();
 const App = () => {
   // TODO: Authorization check will be added soon
   return (
-  <NavigationContainer>
-    <Stack.Navigator initialRouteName='Login' headerMode='none'>
-      <Stack.Screen
-        name='Login'
-        component={LoginPage}
-      />
-      <Stack.Screen
-        name='SignUp'
-        component={SignUpPage}
-      />
-    </Stack.Navigator>
-</NavigationContainer>
-
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Login' headerMode='none'>
+        <Stack.Screen
+          name='Login'
+          component={LoginPage}
+        />
+        <Stack.Screen
+          name='SignUp'
+          component={SignUpPage}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-  //<LoginPage /> //<LoginPage />
 };
 
 export default App;
