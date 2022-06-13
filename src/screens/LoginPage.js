@@ -37,7 +37,11 @@ const LoginPage = () => {
           <TouchableWithoutFeedback>
             <Text style={styles.forgotStyle}>Forgot password?</Text>
           </TouchableWithoutFeedback>
-          <GradientButton colors={[]} buttonText="Sign In" />
+          <GradientButton
+            colors={[]}
+            buttonText="Sign In"
+            onPress={() => navigation.navigate('MainTab')}
+          />
           <SeparatedText param={'or'} />
           <IconsRaw icons={[]} />
           <View style={styles.footerView}>
