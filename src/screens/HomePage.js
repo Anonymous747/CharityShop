@@ -1,11 +1,13 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
+import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
+
 const HomePage = () => {
   return (
-    <View>
+    <BackgroundLinearGradient>
       <Text>HomePage</Text>
-    </View>
+    </BackgroundLinearGradient>
   );
 };
 
