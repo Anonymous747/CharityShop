@@ -17,7 +17,16 @@ import {GradientButton} from '../widgets/common/GradientButton';
 import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
 import {ModalSheet} from '../widgets/common/ModalSheet';
 
-const LoginPage = () => {
+const LoginPage = props => {
+  const {initialized, loaded, authorized, error, fetchUserData} = props;
+
+  console.log(initialized);
+  console.log(authorized);
+  console.log(error);
+  console.log(loaded);
+  console.log(fetchUserData);
+  console.log(props);
+
   const navigation = useNavigation();
 
   return (

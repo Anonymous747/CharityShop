@@ -9,7 +9,7 @@ import {
   BackgroundLinearGradient,
   GradientButton,
   ModalSheet,
-} from '../widgets/common/Index';
+} from '../widgets/common/index';
 
 const SignUpPage = () => {
   // const insets = useSafeAreaInsets();
