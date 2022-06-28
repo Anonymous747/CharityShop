@@ -8,6 +8,7 @@ import {
   View,
   TextInput,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
 
 import {useNavigation} from '@react-navigation/native';
 import {PalleteColor} from '../general/PalleteColor';
@@ -16,16 +17,21 @@ import {IconsRaw} from '../widgets/login/IconsRaw';
 import {GradientButton} from '../widgets/common/GradientButton';
 import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
 import {ModalSheet} from '../widgets/common/ModalSheet';
+import {login} from '../store/actions/LoginActions';
 
 const LoginPage = props => {
+  const dispatch = useDispatch();
+  const onSubmit = values =>
+    dispatch(login({name: 'Mikle', secondName: 'Kob'}));
+
   const {initialized, loaded, authorized, error, fetchUserData} = props;
 
-  console.log(initialized);
-  console.log(authorized);
-  console.log(error);
-  console.log(loaded);
-  console.log(fetchUserData);
-  console.log(props);
+  const onSignInPress = () => {
+    onSubmit();
+    // navigation.navigate('MainTab');
+  };
+
+  // console.log('proooops' + props);
 
   const navigation = useNavigation();
 
@@ -49,7 +55,7 @@ const LoginPage = props => {
           <GradientButton
             colors={[]}
             buttonText="Sign In"
-            onPress={() => navigation.navigate('MainTab')}
+            onPress={onSignInPress}
           />
           <SeparatedText param={'or'} />
           <IconsRaw icons={[]} />

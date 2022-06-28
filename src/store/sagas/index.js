@@ -1,7 +1,7 @@
 import {all, fork} from 'redux-saga/effects';
 
-import {authorize} from './LoginSaga';
+import loginScreenSaga, {authorize} from './LoginSaga';
 
 export function* rootSaga() {
-  yield all([fork(authorize)]);
+  yield all([loginScreenSaga(), authorize()]);
 }
