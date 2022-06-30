@@ -1,5 +1,5 @@
 import {useDispatch} from 'react-redux';
-import {delay, all, takeLatest, put} from 'redux-saga/effects';
+import {delay, all, takeLatest, takeEvery, put} from 'redux-saga/effects';
 import {LOGIN_REQUEST, ERROR_ACTION} from '../actions/LoginActions';
 
 export function* authorize() {
@@ -11,7 +11,7 @@ export function* authorize() {
   });
 }
 
-function* error({error}) {
+function* error({e}) {
   console.log('error = ');
 }
 

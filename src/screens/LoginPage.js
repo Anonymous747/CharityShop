@@ -39,8 +39,6 @@ const LoginPage = props => {
 
   const {initialized, loaded, authorized, error, fetchUserData} = props;
 
-  dispatch(errorAction());
-
   return (
     <BackgroundLinearGradient>
       <StatusBar translucent backgroundColor="transparent" />
@@ -56,7 +54,6 @@ const LoginPage = props => {
             </Text>
             <InputForm
               placeholder="Email address"
-              defaultValue=""
               meta={{error: errors}}
               input={{
                 name: 'email',
