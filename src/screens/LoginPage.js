@@ -1,39 +1,42 @@
 import React from 'react';
 import {
   StatusBar,
-  StyleSheet,
   Text,
   TouchableWithoutFeedback,
   TouchableOpacity,
   View,
-  TextInput,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-
-import {useNavigation} from '@react-navigation/native';
-import {PalleteColor} from '../general/PalleteColor';
 import {SeparatedText} from '../widgets/login/SeparatedText';
 import {IconsRaw} from '../widgets/login/IconsRaw';
 import {GradientButton} from '../widgets/common/GradientButton';
 import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
 import {ModalSheet} from '../widgets/common/ModalSheet';
 import {login} from '../store/actions/LoginActions';
+import {InputForm} from '../components/atoms/index';
+import {useForm} from 'react-hook-form';
+import {SubmitHandler} from 'react-hook-form';
+
+import styles from './styles/LoginPage.style';
+
+type FormValues = {
+  email: String,
+  password: String,
+};
 
 const LoginPage = props => {
+  const {
+    control,
+    handleSubmit,
+    formState: {errors},
+  } = useForm();
+
   const dispatch = useDispatch();
-  const onSubmit = values =>
-    dispatch(login({name: 'Mikle', secondName: 'Kob'}));
-
-  const {initialized, loaded, authorized, error, fetchUserData} = props;
-
-  const onSignInPress = () => {
-    onSubmit();
-    // navigation.navigate('MainTab');
+  const onSubmit: SubmitHandler<FormValues> = data => {
+    dispatch(login({email: data.email, password: data.password}));
   };
 
-  // console.log('proooops' + props);
-
-  const navigation = useNavigation();
+  const {initialized, loaded, authorized, error, fetchUserData} = props;
 
   return (
     <BackgroundLinearGradient>
@@ -47,15 +50,31 @@ const LoginPage = props => {
           <Text style={styles.subHeader}>
             Please login with your email address and password to continue.
           </Text>
-          <TextInput placeholder="Email address" style={styles.textInput} />
-          <TextInput placeholder="Password" style={styles.textInput} />
+          <InputForm
+            placeholder="Email address"
+            meta={{touched: false, error: errors}}
+            input={{
+              name: 'email',
+              control: control,
+              onFocus: focus => console.log('focus + ' + focus),
+            }}
+          />
+          <InputForm
+            placeholder="Password"
+            meta={{touched: false, error: errors}}
+            input={{
+              name: 'password',
+              control: control,
+              onFocus: focus => console.log('focus + ' + focus),
+            }}
+          />
           <TouchableWithoutFeedback>
             <Text style={styles.forgotStyle}>Forgot password?</Text>
           </TouchableWithoutFeedback>
           <GradientButton
             colors={[]}
             buttonText="Sign In"
-            onPress={onSignInPress}
+            onPress={handleSubmit(onSubmit)}
           />
           <SeparatedText param={'or'} />
           <IconsRaw icons={[]} />
@@ -63,7 +82,8 @@ const LoginPage = props => {
             <Text style={styles.dontHaveAccountText}>
               Don't have an account?
             </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('SignUp')}>
               <Text style={styles.signUpText}>Sign up now!</Text>
             </TouchableOpacity>
           </View>
@@ -72,71 +92,5 @@ const LoginPage = props => {
     </BackgroundLinearGradient>
   );
 };
-
-const styles = StyleSheet.create({
-  // Texts
-  logoText: {
-    color: PalleteColor.White,
-    fontWeight: 'bold',
-    fontSize: 50,
-  },
-  header: {
-    color: '#000',
-    fontWeight: 'bold',
-    fontSize: 26,
-    marginTop: '10%',
-  },
-  subHeader: {
-    fontSize: 16,
-  },
-  textInput: {
-    borderColor: PalleteColor.Grey100,
-    borderStyle: 'solid',
-    marginTop: 14,
-    borderRadius: 6,
-    borderWidth: 2,
-    padding: 10,
-  },
-  dontHaveAccountText: {
-    fontWeight: 'bold',
-    marginRight: 4,
-  },
-  signUpText: {
-    color: PalleteColor.Orange,
-    fontWeight: 'bold',
-  },
-  // Buttons
-  forgotStyle: {
-    backgroundColor: 'transparent',
-    textAlign: 'right',
-    color: PalleteColor.Orange,
-    marginVertical: 10,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  // Views
-  bodyView: {
-    flex: 1,
-    backgroundColor: 'white',
-    marginHorizontal: 20,
-  },
-  footerView: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-    flex: 1,
-  },
-  logoView: {
-    justifyContent: 'center',
-    alignSelf: 'center',
-    height: 200,
-  },
-  headerView: {
-    height: '100%',
-    width: '100%',
-    flex: 1,
-  },
-});
 
 export default LoginPage;

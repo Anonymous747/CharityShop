@@ -12,7 +12,7 @@ export function* authorize() {
 
 function* loginUser({user}) {
   try {
-    console.log('TRY');
+    console.log('user.email ' + user.email + ' user.password ' + user.password);
   } catch (error) {
     console.log('CATCH ' + error);
   }

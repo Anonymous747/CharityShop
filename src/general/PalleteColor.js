@@ -1,4 +1,4 @@
-export const PalleteColor = {
+const PalleteColor = {
   Red: '#E96373',
   Orange: '#F1AA44',
   LightPurple: '#694fad',
@@ -10,3 +10,5 @@ export const PalleteColor = {
   White: '#FFFFFF',
   Black: '#000',
 };
+
+export default PalleteColor;

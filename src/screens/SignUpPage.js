@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, TextInput, Text, ScrollView} from 'react-native';
-import {PalleteColor} from '../general/PalleteColor';
+import PalleteColor from '../general/PalleteColor';
 import {useNavigation} from '@react-navigation/native';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../general/PalleteColor';
 
 export const BackArrow = ({onPress}) => {
   const insets = useSafeAreaInsets();

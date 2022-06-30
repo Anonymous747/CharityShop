@@ -1,6 +1,6 @@
 import * as React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../general/PalleteColor';
 
 export const BackgroundLinearGradient = ({children}) => {
   return (

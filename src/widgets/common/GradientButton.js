@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../general/PalleteColor';
 
 export const GradientButton = ({colors, buttonText, onPress}) => {
   return (

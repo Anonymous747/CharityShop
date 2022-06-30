@@ -14,8 +14,6 @@ const configStore = initialState => {
   sagaMiddleware.run(rootSaga);
 
   return store;
-  // Why can't I use configureStore?
-  // configureStore(rootReducer, initialState, middleware);
 };
 
 export default configStore;

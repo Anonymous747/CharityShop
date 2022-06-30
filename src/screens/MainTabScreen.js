@@ -8,8 +8,7 @@ import HomePage from './HomePage';
 import ProfilePage from './ProfilePage';
 import CartPage from './CartPage';
 import WalletPage from './WalletPage';
-
-import {PalleteColor} from '../general/PalleteColor';
+import PalleteColor from '../general/PalleteColor';
 
 const Tab = createMaterialBottomTabNavigator();
 
