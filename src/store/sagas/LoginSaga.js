@@ -1,5 +1,6 @@
-import {delay, takeEvery, takeLatest, put} from 'redux-saga/effects';
-import {LOGIN_REQUEST} from '../actions/LoginActions';
+import {useDispatch} from 'react-redux';
+import {delay, all, takeLatest, put} from 'redux-saga/effects';
+import {LOGIN_REQUEST, ERROR_ACTION} from '../actions/LoginActions';
 
 export function* authorize() {
   yield delay(4000);
@@ -10,15 +11,22 @@ export function* authorize() {
   });
 }
 
+function* error({error}) {
+  console.log('error = ');
+}
+
 function* loginUser({user}) {
   try {
     console.log('user.email ' + user.email + ' user.password ' + user.password);
-  } catch (error) {
-    console.log('CATCH ' + error);
+  } catch (e) {
+    yield put({type: ERROR_ACTION, e});
   }
 }
 
 export default function* loginScreenSaga() {
   console.log('LoginScreenSage');
-  yield takeLatest(LOGIN_REQUEST, loginUser);
+  yield all([
+    takeLatest(LOGIN_REQUEST, loginUser),
+    takeLatest(ERROR_ACTION, error),
+  ]);
 }

@@ -5,6 +5,7 @@ import {
   TouchableWithoutFeedback,
   TouchableOpacity,
   View,
+  ScrollView,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {SeparatedText} from '../widgets/login/SeparatedText';
@@ -12,7 +13,7 @@ import {IconsRaw} from '../widgets/login/IconsRaw';
 import {GradientButton} from '../widgets/common/GradientButton';
 import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
 import {ModalSheet} from '../widgets/common/ModalSheet';
-import {login} from '../store/actions/LoginActions';
+import {login, errorAction} from '../store/actions/LoginActions';
 import {InputForm} from '../components/atoms/index';
 import {useForm} from 'react-hook-form';
 import {SubmitHandler} from 'react-hook-form';
@@ -38,6 +39,8 @@ const LoginPage = props => {
 
   const {initialized, loaded, authorized, error, fetchUserData} = props;
 
+  dispatch(errorAction());
+
   return (
     <BackgroundLinearGradient>
       <StatusBar translucent backgroundColor="transparent" />
@@ -45,49 +48,54 @@ const LoginPage = props => {
         <Text style={styles.logoText}>Eco Textile</Text>
       </View>
       <ModalSheet>
-        <View style={styles.bodyView}>
-          <Text style={styles.header}>Welcome back!</Text>
-          <Text style={styles.subHeader}>
-            Please login with your email address and password to continue.
-          </Text>
-          <InputForm
-            placeholder="Email address"
-            meta={{touched: false, error: errors}}
-            input={{
-              name: 'email',
-              control: control,
-              onFocus: focus => console.log('focus + ' + focus),
-            }}
-          />
-          <InputForm
-            placeholder="Password"
-            meta={{touched: false, error: errors}}
-            input={{
-              name: 'password',
-              control: control,
-              onFocus: focus => console.log('focus + ' + focus),
-            }}
-          />
-          <TouchableWithoutFeedback>
-            <Text style={styles.forgotStyle}>Forgot password?</Text>
-          </TouchableWithoutFeedback>
-          <GradientButton
-            colors={[]}
-            buttonText="Sign In"
-            onPress={handleSubmit(onSubmit)}
-          />
-          <SeparatedText param={'or'} />
-          <IconsRaw icons={[]} />
-          <View style={styles.footerView}>
-            <Text style={styles.dontHaveAccountText}>
-              Don't have an account?
+        <ScrollView>
+          <View style={styles.bodyView}>
+            <Text style={styles.header}>Welcome back!</Text>
+            <Text style={styles.subHeader}>
+              Please login with your email address and password to continue.
             </Text>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate('SignUp')}>
-              <Text style={styles.signUpText}>Sign up now!</Text>
-            </TouchableOpacity>
+            <InputForm
+              placeholder="Email address"
+              defaultValue=""
+              meta={{error: errors}}
+              input={{
+                name: 'email',
+                control: control,
+                rules: {
+                  validate: text => text.length < 4,
+                  maxLenth: 2,
+                },
+              }}
+            />
+            <InputForm
+              placeholder="Password"
+              meta={{error: errors}}
+              input={{
+                name: 'password',
+                control: control,
+              }}
+            />
+            <TouchableWithoutFeedback>
+              <Text style={styles.forgotStyle}>Forgot password?</Text>
+            </TouchableWithoutFeedback>
+            <GradientButton
+              colors={[]}
+              buttonText="Sign In"
+              onPress={handleSubmit(onSubmit)}
+            />
+            <SeparatedText param={'or'} />
+            <IconsRaw icons={[]} />
+            <View style={styles.footerView}>
+              <Text style={styles.dontHaveAccountText}>
+                Don't have an account?
+              </Text>
+              <TouchableOpacity
+                onPress={() => props.navigation.navigate('SignUp')}>
+                <Text style={styles.signUpText}>Sign up now!</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </ModalSheet>
     </BackgroundLinearGradient>
   );

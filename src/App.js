@@ -14,7 +14,6 @@ const Stack = createStackNavigator();
 
 const App = () => {
   // TODO: Authorization check will be added soon
-  console.log('App store' + store());
   return (
     <Provider store={store()}>
       <NavigationContainer>

@@ -25,8 +25,6 @@ export const errorAction = () => ({
 export const fetchData = () => fetchUsersData().then();
 
 export const login = user => ({
-  // console.log('LoginActions' + user.name + ' ' + user.secondName);
-
   type: LOGIN_REQUEST,
   user: user,
 });

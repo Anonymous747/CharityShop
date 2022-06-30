@@ -25,6 +25,7 @@ const loginSlice = createSlice({
       state.loaded = true;
     },
     error: state => {
+      console.log('Error handled');
       state.error = true;
     },
   },

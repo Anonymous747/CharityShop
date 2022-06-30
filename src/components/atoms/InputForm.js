@@ -1,10 +1,12 @@
 import React from 'react';
 import PalleteColor from '../../general/PalleteColor';
 import {Text, View, TextInput, StyleSheet} from 'react-native';
-import {useForm, Controller} from 'react-hook-form';
+import {Controller} from 'react-hook-form';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const FormInput = props => {
-  const {touched, error} = props.meta;
+  const {error} = props.meta;
+  let touched = false;
 
   const isErrorVisible = () => {
     return touched && error ? <Text>{error}</Text> : null;
@@ -13,18 +15,19 @@ const FormInput = props => {
   return (
     <Controller
       control={props.input.control}
-      rules={{
-        required: true,
-      }}
+      rules={props.input.rules}
       render={({field: {onChange, onBlur, value}}) => (
-        <TextInput
-          {...props}
-          value={value}
-          onChangeText={onChange}
-          onFocus={props.input.onFocus}
-          onBlur={onBlur}
-          style={styles.textInput}
-        />
+        <TouchableOpacity onPress={() => (touched = true)}>
+          <TextInput
+            {...props}
+            onEndEditing={_ => (touched = false)}
+            value={value}
+            onChangeText={onChange}
+            onFocus={props.input.onFocus}
+            onBlur={onBlur}
+            style={styles.textInput}
+          />
+        </TouchableOpacity>
       )}
       name={props.input.name}>
       <View>
