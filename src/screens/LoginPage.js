@@ -18,6 +18,7 @@ import {InputForm} from '../components/atoms/index';
 import {useForm} from 'react-hook-form';
 import {SubmitHandler} from 'react-hook-form';
 
+import * as Paths from '../general/Paths';
 import styles from './styles/LoginPage.style';
 
 type FormValues = {
@@ -35,6 +36,7 @@ const LoginPage = props => {
   const dispatch = useDispatch();
   const onSubmit: SubmitHandler<FormValues> = data => {
     dispatch(login({email: data.email, password: data.password}));
+    props.navigation.navigate(Paths.MAIN_TAB);
   };
 
   const {initialized, loaded, authorized, error, fetchUserData} = props;
@@ -59,7 +61,7 @@ const LoginPage = props => {
                 name: 'email',
                 control: control,
                 rules: {
-                  validate: text => text.length < 4,
+                  // validate: text => text.length < 4,
                   maxLenth: 2,
                 },
               }}
@@ -87,7 +89,7 @@ const LoginPage = props => {
                 Don't have an account?
               </Text>
               <TouchableOpacity
-                onPress={() => props.navigation.navigate('SignUp')}>
+                onPress={() => props.navigation.navigate(Paths.SIGN_UP)}>
                 <Text style={styles.signUpText}>Sign up now!</Text>
               </TouchableOpacity>
             </View>

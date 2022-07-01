@@ -5,6 +5,8 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Provider} from 'react-redux';
 
+import * as Paths from './general/Paths';
+
 import store from './store/ConfigStore';
 import LoginPage from './screens/LoginPage';
 import SignUpPage from './screens/SignUpPage';
@@ -18,9 +20,9 @@ const App = () => {
     <Provider store={store()}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" headerMode="none">
-          <Stack.Screen name="Login" component={LoginPage} />
-          <Stack.Screen name="SignUp" component={SignUpPage} />
-          <Stack.Screen name="MainTab" component={MainTabScreen} />
+          <Stack.Screen name={Paths.LOGIN} component={LoginPage} />
+          <Stack.Screen name={Paths.SIGN_UP} component={SignUpPage} />
+          <Stack.Screen name={Paths.MAIN_TAB} component={MainTabScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
