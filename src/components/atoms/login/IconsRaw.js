@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Icon} from 'react-native-elements';
 
-export const IconsRaw = icons => {
+const IconsRaw = icons => {
   return (
     <View style={styles.rawView}>
       <Icon raised name="apple1" type="ant-design" color="#000" />
@@ -28,3 +28,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default IconsRaw;

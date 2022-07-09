@@ -7,12 +7,11 @@ import {signUp} from '../store/actions/SignUpActions';
 import {useNavigation} from '@react-navigation/native';
 import styles from './styles/SignUp.style';
 
+import {BackArrow, GradientButton} from '../components/atoms/index';
 import {
-  BackArrow,
-  BackgroundLinearGradient,
-  GradientButton,
   ModalSheet,
-} from '../widgets/common/index';
+  BackgroundLinearGradient,
+} from '../components/molecules/index';
 
 type RegisterFormValues = {
   name: String,

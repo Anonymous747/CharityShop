@@ -8,11 +8,15 @@ import {
   ScrollView,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {SeparatedText} from '../widgets/login/SeparatedText';
-import {IconsRaw} from '../widgets/login/IconsRaw';
-import {GradientButton} from '../widgets/common/GradientButton';
-import {BackgroundLinearGradient} from '../widgets/common/BackgroundLinearGradient';
-import {ModalSheet} from '../widgets/common/ModalSheet';
+import {
+  IconsRaw,
+  SeparatedText,
+  GradientButton,
+} from '../components/atoms/index';
+import {
+  BackgroundLinearGradient,
+  ModalSheet,
+} from '../components/molecules/index';
 import {login, errorAction} from '../store/actions/LoginActions';
 import {InputForm} from '../components/atoms/index';
 import {useForm} from 'react-hook-form';
