@@ -2,16 +2,20 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {BackgroundLinearGradient} from '../components/molecules/index';
-import {SearchMenu, IconWithLable} from '../components/atoms/index';
+import {SearchMenu, IconWithLable, OfferStrip} from '../components/atoms/index';
 import {Icon} from 'react-native-elements';
 import PalleteColor from '../general/PalleteColor';
+
+const popularItems = ['Streat Wear', 'Glases'];
 
 const HomePage = () => {
   return (
     <BackgroundLinearGradient>
       <SafeAreaView>
         <View style={styles.searchBarView}>
-          <SearchMenu style={styles.searchBar}>
+          <SearchMenu
+            placeholder={'Search for anything...'}
+            style={styles.searchBar}>
             <IconWithLable
               name="message-square"
               type="feather"
@@ -30,6 +34,7 @@ const HomePage = () => {
             />
           </SearchMenu>
         </View>
+        <OfferStrip children={popularItems} />
       </SafeAreaView>
     </BackgroundLinearGradient>
   );

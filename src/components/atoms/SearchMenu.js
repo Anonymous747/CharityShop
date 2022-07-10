@@ -2,14 +2,14 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 
-const SearchMenu = ({style, children}) => {
+const SearchMenu = ({style, children, placeholder}) => {
   const [searchQuery, setSearchQuery] = React.useState('');
   const onChangeSearch = query => setSearchQuery;
 
   return (
     <View style={styles.container}>
       <Searchbar
-        placeholder="Search"
+        placeholder={placeholder}
         onChangeText={onChangeSearch}
         value={searchQuery}
         style={style}

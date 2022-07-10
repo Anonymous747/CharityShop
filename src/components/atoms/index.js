@@ -7,6 +7,8 @@ import IconWithLable from './IconWithLable';
 import IconsRaw from './login/IconsRaw';
 import SeparatedText from './login/SeparatedText';
 
+import OfferStrip from './home/OfferStrip';
+
 export {
   InputForm,
   IconsRaw,
@@ -15,4 +17,5 @@ export {
   IconWithLable,
   GradientButton,
   SearchMenu,
+  OfferStrip,
 };
