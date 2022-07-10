@@ -4,7 +4,7 @@ import {Icon} from 'react-native-elements';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import PalleteColor from '../../general/PalleteColor';
 
-export const BackArrow = ({onPress}) => {
+const BackArrow = ({onPress}) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -29,3 +29,5 @@ const styles = StyleSheet.create({
     paddingBottom: '4%',
   },
 });
+
+export default BackArrow;

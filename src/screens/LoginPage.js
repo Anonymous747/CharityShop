@@ -82,7 +82,6 @@ const LoginPage = props => {
               <Text style={styles.forgotStyle}>Forgot password?</Text>
             </TouchableWithoutFeedback>
             <GradientButton
-              colors={[]}
               buttonText="Sign In"
               onPress={handleSubmit(onSubmit)}
             />

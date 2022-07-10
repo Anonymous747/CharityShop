@@ -97,7 +97,6 @@ const SignUpPage = props => {
         </ScrollView>
         <View style={styles.gradientBtnView}>
           <GradientButton
-            colors={[]}
             buttonText="Sign Up"
             onPress={handleSubmit(onSubmit)}
           />

@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   children: {
+    width: '30%',
     flexDirection: 'row',
-    // justifyContent: 'flex-end',
+    justifyContent: 'space-evenly',
   },
 });
 
