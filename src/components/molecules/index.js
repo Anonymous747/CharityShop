@@ -1,4 +1,6 @@
 import BackgroundLinearGradient from './BackgroundLinearGradient';
 import ModalSheet from './ModalSheet';
 
-export {BackgroundLinearGradient, ModalSheet};
+import IconGrid from './home/IconGrid';
+
+export {BackgroundLinearGradient, ModalSheet, IconGrid};

@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {BackgroundLinearGradient} from '../components/molecules/index';
+import {
+  BackgroundLinearGradient,
+  IconGrid,
+} from '../components/molecules/index';
 import {SearchMenu, IconWithLable, OfferStrip} from '../components/atoms/index';
-import {Icon} from 'react-native-elements';
-import PalleteColor from '../general/PalleteColor';
-
-const popularItems = ['Streat Wear', 'Glases'];
+import {ScrollView} from 'react-native-gesture-handler';
+import {popularItems, iconsWithText} from './tempResources/HomeResources';
 
 const HomePage = () => {
   return (
@@ -35,6 +36,16 @@ const HomePage = () => {
           </SearchMenu>
         </View>
         <OfferStrip children={popularItems} />
+        <View>
+          <ScrollView>
+            <Image
+              source={require('../assets/images/presents_picture.jpeg')}
+              resizeMode={'stretch'}
+              style={{height: 200, width: '100%'}}
+            />
+            <IconGrid children={iconsWithText} />
+          </ScrollView>
+        </View>
       </SafeAreaView>
     </BackgroundLinearGradient>
   );

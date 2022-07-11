@@ -5,6 +5,7 @@ import GradientButton from './GradientButton';
 import IconWithLable from './IconWithLable';
 
 import IconsRaw from './login/IconsRaw';
+import IconWithBottomText from './home/IconWithBottomText';
 import SeparatedText from './login/SeparatedText';
 
 import OfferStrip from './home/OfferStrip';
@@ -15,6 +16,7 @@ export {
   SeparatedText,
   BackArrow,
   IconWithLable,
+  IconWithBottomText,
   GradientButton,
   SearchMenu,
   OfferStrip,

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     backgroundColor: PalleteColor.Orange,
     borderRadius: 60,
     height: 30,
-    marginHorizontal: 5,
+    marginHorizontal: 4,
   },
   text: {
     color: PalleteColor.White,

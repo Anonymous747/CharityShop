@@ -7,8 +7,8 @@ const OfferStrip = ({children}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.popularText}>Popular: </Text>
-      {children.map(el => (
-        <KindCell title={el} />
+      {children.map((el, index) => (
+        <KindCell title={el} key={index} />
       ))}
     </View>
   );
