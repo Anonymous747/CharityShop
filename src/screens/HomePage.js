@@ -4,49 +4,54 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {
   BackgroundLinearGradient,
   IconGrid,
+  ScrollableCollection,
 } from '../components/molecules/index';
 import {SearchMenu, IconWithLable, OfferStrip} from '../components/atoms/index';
 import {ScrollView} from 'react-native-gesture-handler';
-import {popularItems, iconsWithText} from './tempResources/HomeResources';
+import {
+  popularItems,
+  iconsWithText,
+  clothes,
+} from './tempResources/HomeResources';
 
 const HomePage = () => {
   return (
     <BackgroundLinearGradient>
-      <SafeAreaView>
-        <View style={styles.searchBarView}>
-          <SearchMenu
-            placeholder={'Search for anything...'}
-            style={styles.searchBar}>
-            <IconWithLable
-              name="message-square"
-              type="feather"
-              size={44}
-              iconSize={28}
-              lableRadius={10}
-              lable={'4'}
-            />
-            <IconWithLable
-              name="bell"
-              type="feather"
-              size={38}
-              iconSize={28}
-              lableRadius={10}
-              lable={'4'}
-            />
-          </SearchMenu>
-        </View>
-        <OfferStrip children={popularItems} />
-        <View>
-          <ScrollView>
-            <Image
-              source={require('../assets/images/presents_picture.jpeg')}
-              resizeMode={'stretch'}
-              style={{height: 200, width: '100%'}}
-            />
-            <IconGrid children={iconsWithText} />
-          </ScrollView>
-        </View>
-      </SafeAreaView>
+      <SafeAreaView />
+      <View style={styles.searchBarView}>
+        <SearchMenu
+          placeholder={'Search for anything...'}
+          style={styles.searchBar}>
+          <IconWithLable
+            name="message-square"
+            type="feather"
+            size={44}
+            iconSize={28}
+            lableRadius={10}
+            lable={'4'}
+          />
+          <IconWithLable
+            name="bell"
+            type="feather"
+            size={38}
+            iconSize={28}
+            lableRadius={10}
+            lable={'4'}
+          />
+        </SearchMenu>
+      </View>
+      <OfferStrip children={popularItems} />
+      {/* <View> */}
+      <ScrollView>
+        <Image
+          source={require('../assets/images/presents_picture.jpeg')}
+          resizeMode={'stretch'}
+          style={{height: 200, width: '100%'}}
+        />
+        <IconGrid children={iconsWithText} />
+        <ScrollableCollection clothes={clothes} />
+      </ScrollView>
+      {/* </View> */}
     </BackgroundLinearGradient>
   );
 };

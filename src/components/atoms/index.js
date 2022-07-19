@@ -7,6 +7,7 @@ import IconWithLable from './IconWithLable';
 import IconsRaw from './login/IconsRaw';
 import IconWithBottomText from './home/IconWithBottomText';
 import SeparatedText from './login/SeparatedText';
+import CollectionCell from './home/CollectionCell';
 
 import OfferStrip from './home/OfferStrip';
 
@@ -20,4 +21,5 @@ export {
   GradientButton,
   SearchMenu,
   OfferStrip,
+  CollectionCell,
 };

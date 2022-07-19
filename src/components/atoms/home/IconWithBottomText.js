@@ -8,7 +8,12 @@ const IconWithBottomText = ({cell}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <Icon name={cell.name} type={cell.type} size={cell?.size ?? 16} />
+        <Icon
+          name={cell.name}
+          type={cell.type}
+          size={cell?.size ?? 16}
+          color={PalleteColor.Red}
+        />
         <Text style={styles.text}>{cell.text}</Text>
       </TouchableOpacity>
     </View>

@@ -1,10 +1,3 @@
-type IconParams = {
-  name: String,
-  type: String,
-  size: Number,
-  text: String,
-};
-
 export const popularItems = ['Streat Wear', 'Glases', 'Swimsuits'];
 export const iconsWithText = [
   {
@@ -66,5 +59,28 @@ export const iconsWithText = [
     type: 'feather',
     size: 26,
     text: '50% OFF',
+  },
+];
+
+export const clothes = [
+  {
+    image: '../../../assets/images/images.jpeg',
+    subtitle: 'From new collection',
+  },
+  {
+    image: '../../../assets/images/images.jpeg',
+    subtitle: 'From new collection',
+  },
+  {
+    image: '../../../assets/images/images.jpeg',
+    subtitle: 'From new collection',
+  },
+  {
+    image: '../../../assets/images/images.jpeg',
+    subtitle: 'From new collection',
+  },
+  {
+    image: '../../../assets/images/images.jpeg',
+    subtitle: 'From new collection',
   },
 ];
