@@ -1,8 +1,8 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../../general/PalleteColor';
 
-export const SeparatedText = ({param}) => {
+const SeparatedText = ({param}) => {
   return (
     <View style={styles.mainView}>
       <View style={styles.line} />
@@ -31,3 +31,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default SeparatedText;

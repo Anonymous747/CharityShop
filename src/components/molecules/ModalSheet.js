@@ -1,8 +1,8 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../general/PalleteColor';
 
-export const ModalSheet = ({children}) => {
+const ModalSheet = ({children}) => {
   return <View style={styles.bodyView}>{children}</View>;
 };
 
@@ -14,3 +14,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default ModalSheet;

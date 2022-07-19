@@ -1,13 +1,17 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {PalleteColor} from '../../general/PalleteColor';
+import PalleteColor from '../../general/PalleteColor';
 
-export const GradientButton = ({colors, buttonText, onPress}) => {
+const GradientButton = ({
+  buttonText,
+  onPress,
+  colors = [PalleteColor.Red, PalleteColor.Orange],
+}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <LinearGradient
-        colors={[PalleteColor.Red, PalleteColor.Orange]}
+        colors={colors}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
         style={styles.signInBtn}>
@@ -29,3 +33,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default GradientButton;
